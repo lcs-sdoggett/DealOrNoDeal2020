@@ -13,7 +13,6 @@ import Foundation
 //
 var briefcasesOpened = -1
 var briefcaseOpenedThisTime = -1
-var bankerOffer = -1
 
 // Loop until valid input provided by user
 while true {
@@ -141,12 +140,8 @@ func bankerOfferFunc()-> Int {
             
         }
         
-        // If we've made it here, the input is valid
-        bankerOffer = integerGiven3
-        
-        
         // The statement below can be modified
-        return bankerOffer
+        return integerGiven3
     }
 }
 
@@ -165,12 +160,22 @@ for turn in 1...briefcasesOpened {
 
 // STUDENTS: Do any remaining calculations you might need below.
 
-
-func findAverage() {
+func findAverage()-> Double {
     
-    // let average = the sum of the values of the array
+    // Iterate over values and add them up
+    
+    var runningTotal = 0
+    
+    for value in briefcaseValues {
+        runningTotal += value
+    }
+    
+    return Double(runningTotal) / Double(10 - briefcasesOpened)
     
 }
+
+var average = findAverage()
+var bankerOffer = bankerOfferFunc()
 
 //
 // OUTPUT SECTION OF PROGRAM
@@ -181,5 +186,11 @@ func findAverage() {
 func dealOrNoDeal() {
      
     // if average is less the banker offer, no deal otherwise deal
-    
+    if average > Double(bankerOffer) {
+        print("No Deal")
+    } else {
+        print("Deal")
+    }
 }
+
+dealOrNoDeal()

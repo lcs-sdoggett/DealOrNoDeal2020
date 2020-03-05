@@ -30,7 +30,7 @@ while true {
         
         // Could not make input into an integer, so return to top and ask again
         continue
-
+        
     }
     
     // Check that integer is in desired range
@@ -89,7 +89,7 @@ func getBriefcaseOpened(onTurn turn: Int) -> Int {
             
             // Could not make input into an integer, so return to top and ask again
             continue
-
+            
         }
         
         // Check that integer is in desired range
@@ -128,7 +128,7 @@ func bankerOfferFunc()-> Int {
             
             // Could not make input into an integer, so return to top and ask again
             continue
-
+            
         }
         
         // Check that integer is in desired range
@@ -184,7 +184,7 @@ var bankerOffer = bankerOfferFunc()
 // STUDENTS: Now tell the player whether to take the deal, or not.
 
 func dealOrNoDeal() {
-     
+    
     // if average is less the banker offer, no deal otherwise deal
     if average > Double(bankerOffer) {
         print("No Deal")
